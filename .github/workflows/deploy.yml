@@ -49,5 +49,5 @@ jobs:
       - name: Terraform Plan
         run: smurf stf plan
 
-      - name: Terraform Apply
+      - name: Terraform Apply 
         run: smurf stf apply --auto-approve
