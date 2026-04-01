@@ -1,5 +1,5 @@
 aws_region          = "us-east-1"
-bucket_name         = "aniket-test-bucker12456"
+bucket_name         = "aniket-test-bucker123456"
 environment         = "dev"
 enable_versioning   = false
 enable_encryption   = true
