@@ -2,7 +2,6 @@ name: Deploy S3 Bucket
 
 on:
   push:
-    # workflow_dispatch:
     branches:
       - test
       - master
@@ -25,6 +24,11 @@ jobs:
         with:
           terraform_version: '1.5.0'
 
+      - name: Set up smurf                  
+        uses: clouddrove/smurf@fix/smurf-stf
+        with:
+          version: v1.0.1-beta
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -37,14 +41,13 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Terraform Init
-        run: terraform init
+        run: smurf stf init
 
       - name: Terraform Validate
-        run: terraform validate
+        run: smurf stf validate
 
       - name: Terraform Plan
-        run: terraform plan -out=tfplan
+        run: smurf stf plan --out=tfplan
 
       - name: Terraform Apply
-        run: terraform apply tfplan
-
+        run: smurf stf apply tfplan
