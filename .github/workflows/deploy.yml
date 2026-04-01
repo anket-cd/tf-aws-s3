@@ -47,7 +47,7 @@ jobs:
         run: smurf stf validate
 
       - name: Terraform Plan
-        run: smurf stf plan --out=tfplan
+        run: smurf stf plan
 
       - name: Terraform Apply
-        run: smurf stf apply tfplan
+        run: smurf stf apply -auto-approve
