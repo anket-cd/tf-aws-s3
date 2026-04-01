@@ -2,7 +2,7 @@ name: Deploy S3 Bucket
 
 on:
   push:
-    workflows_dispatch:
+    workflow_dispatch:
     branches:
       - test
       - master
