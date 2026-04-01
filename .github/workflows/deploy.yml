@@ -2,12 +2,14 @@ name: Deploy S3 Bucket
 
 on:
   push:
+    # workflow_dispatch:
     branches:
       - test
       - master
-    paths:
-      - '**.tf'
-      - '**.tfvars'
+
+    # paths:
+    #   - '**.tf'
+    #   - '**.tfvars'
 
 jobs:
   deploy:
