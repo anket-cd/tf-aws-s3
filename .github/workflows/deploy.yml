@@ -7,9 +7,9 @@ on:
       - test
       - master
 
-    # paths:
-    #   - '**.tf'
-    #   - '**.tfvars'
+    paths:
+      - '**.tf'
+      - '**.tfvars'
 
 jobs:
   deploy:
