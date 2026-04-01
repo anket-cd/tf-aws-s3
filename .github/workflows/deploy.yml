@@ -25,11 +25,6 @@ jobs:
         with:
           terraform_version: '1.5.0'
 
-      - name: Set up smurf                  
-        uses: clouddrove/smurf@master
-        with:
-          version: latest
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -42,13 +37,14 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Terraform Init
-        run: smurf stf init
+        run: terraform init
 
       - name: Terraform Validate
-        run: smurf stf validate
+        run: terraform validate
 
       - name: Terraform Plan
-        run: smurf stf plan --out=tfplan
+        run: terraform plan -out=tfplan
 
       - name: Terraform Apply
-        run: smurf stf apply tfplan
+        run: terraform apply tfplan
+
