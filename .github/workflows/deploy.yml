@@ -25,9 +25,9 @@ jobs:
           terraform_version: '1.5.0'
 
       - name: Set up smurf                  
-        uses: clouddrove/smurf@fix/smurf-stf
+        uses: clouddrove/smurf@ci/github-shared-workflows
         with:
-          version: v1.0.3
+          version: v1.0.6
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
