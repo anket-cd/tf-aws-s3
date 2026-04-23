@@ -55,8 +55,5 @@ jobs:
       - name: Smurf Terraform Show json
         run: smurf stf show --json
 
-      - name: Smurf Terraform Show file
-        run: smurf stf show plan tfplan
-
       - name: Smurf Terraform Apply
         run: smurf stf apply tfplan
