@@ -27,7 +27,7 @@ jobs:
       - name: Set up smurf                  
         uses: clouddrove/smurf@fix/stf-show
         with:
-          version: v1.1.1-beta
+          version: v1.1.1
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
