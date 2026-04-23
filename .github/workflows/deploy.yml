@@ -46,14 +46,14 @@ jobs:
       - name: Smurf Terraform Validate
         run: smurf stf validate
 
-      - name: Smurf Terraform Plan
-        run: smurf stf plan --out=tfplan
-
       - name: Smurf Terraform Show
         run: smurf stf show
 
       - name: Smurf Terraform Show json
         run: smurf stf show --json
+
+      - name: Smurf Terraform Plan
+        run: smurf stf plan --out=tfplan
 
       - name: Smurf Terraform Apply
         run: smurf stf apply tfplan
