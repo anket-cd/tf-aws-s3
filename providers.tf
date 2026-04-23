@@ -1,16 +1,16 @@
 terraform {
   required_version = ">= 1.0"
   
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
+  # required_providers {
+  #   aws = {
+  #     source  = "hashicorp/aws"
+  #     version = "~> 5.0"
+  #   }
+  # }
 
   backend "s3" {
-    bucket = "mybucket"
-    key    = "path/to/my/key"
+    bucket = "aniket-test-bucker31391245"
+    key    = "key"
     region = "us-east-1"
   }
 }
