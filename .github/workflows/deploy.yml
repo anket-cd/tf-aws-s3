@@ -40,23 +40,23 @@ jobs:
       - name: Verify AWS Identity (Debug Step 🔍)
         run: aws sts get-caller-identity
 
-      - name: Terraform Init
+      - name: Smurf Terraform Init
         run: smurf stf init
 
-      - name: Terraform Validate
+      - name: Smurf Terraform Validate
         run: smurf stf validate
 
-      - name: Terraform Plan
+      - name: Smurf Terraform Plan
         run: smurf stf plan --out=tfplan
 
       - name: Smurf Terraform Show
         run: smurf stf show
 
-      - name: Smurf Terraform Show
+      - name: Smurf Terraform Show json
         run: smurf stf show --json
 
-      - name: Smurf Terraform Show
-        run: smurf stf show plan test.plan
+      - name: Smurf Terraform Show file
+        run: smurf stf show plan tfplan
 
-      - name: Terraform Apply
+      - name: Smurf Terraform Apply
         run: smurf stf apply tfplan
