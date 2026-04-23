@@ -3,7 +3,7 @@ name: Deploy S3 Bucket
 on:
   push:
     branches:
-      - test
+      - smurf-stf
       - master
 
     paths:
