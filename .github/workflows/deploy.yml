@@ -25,9 +25,9 @@ jobs:
           terraform_version: '1.5.0'
 
       - name: Set up smurf                  
-        uses: clouddrove/smurf@ci/github-shared-workflows
+        uses: clouddrove/smurf@fix/stf-show
         with:
-          version: v1.0.6
+          version: v1.1.1-beta
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -48,6 +48,15 @@ jobs:
 
       - name: Terraform Plan
         run: smurf stf plan --out=tfplan
+
+      - name: Smurf Terraform Show
+        run: smurf stf show
+
+      - name: Smurf Terraform Show
+        run: smurf stf show --json
+
+      - name: Smurf Terraform Show
+        run: smurf stf show plan test.plan
 
       - name: Terraform Apply
         run: smurf stf apply tfplan
